@@ -16,7 +16,10 @@
 
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
 	<script type="text/javascript" charset="utf-8"> 
+
 document.addEventListener("deviceready", onDeviceReady, false); 
+
+
 function onDeviceReady() { 
 var miDispositivo = document.getElementById('informaciondeldispositivo'); 
 var titulo = '<div align="center"><h2>Informaci&oacute;n del dispositivo</h2></div>'; 
@@ -38,6 +41,7 @@ miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' +
 '<strong>UUID:</strong> ' + device.uuid + '<br/>'+
 
 '<strong>Bateria Level</strong> '   + info.level + ' isPlugged: ' + info.isPlugged+ '<br/>';
+}
 
 </script> 
 
