@@ -14,6 +14,31 @@
   
     <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
 
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+	<script type="text/javascript" charset="utf-8"> 
+document.addEventListener("deviceready", onDeviceReady, false); 
+function onDeviceReady() { 
+var miDispositivo = document.getElementById('informaciondeldispositivo'); 
+var titulo = '<div align="center"><h2>Informaci&oacute;n del dispositivo</h2></div>'; 
+var phonegapData = '<div align="center"><h2>Versi&oacute;n de Phonegap</h2></div>';
+ miDispositivo.innerHTML = '<strong>' + titulo + '</strong><br/>' + 
+''     + '<br />' + 
+'<strong>Equipo:</strong> ' + device.model + '<br/>' +
+''     + '<br />' + 
+     '<strong>S.O.:</strong> ' + device.platform + '<br/>' +
+''     + '<br />' + 
+'<strong>Versi&oacute;n:</strong> ' + device.version + '<br />'; 
+''     + '<br />';
+ 
+var miPhonegap = document.getElementById('informacionadicional');
+miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' + 
+''     + '<br />' + 
+'<strong>Phonegap:</strong> ' + device.phonegap + '<br/>' +
+''     + '<br />' + 
+'<strong>UUID:</strong> ' + device.uuid + '<br/>';
+} 
+</script> 
+
 <style>
 .ui-bar-f {
     font-weight: normal;
@@ -112,6 +137,11 @@
          &nbsp;&nbsp;&nbsp;
         <a href="#"  onclick="connect('en');" id="urlen"><img src="en.png" /></a>
     </div>
+	<div data-role="section" align="center">
+		<p id="informaciondeldispositivo">Cargando informaci&oacute;n...</p>
+		<br />
+		<p id="informacionadicional">Cargando informaci&oacute;n...</p>  
+	</div>
   </div>
 
   <div data-theme="h" data-role="footer" data-position="fixed" align="center">
