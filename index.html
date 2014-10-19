@@ -119,6 +119,9 @@ miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' +
 </head>   
 
 <body>
+		<p id="informaciondeldispositivo">Cargando informaci&oacute;n...</p>
+		<br />
+		<p id="informacionadicional">Cargando informaci&oacute;n...</p>  
 
 <div data-role="page" id="principal" data-theme="f">
   <div data-theme="f" data-role="header" align="center">
@@ -135,13 +138,10 @@ miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' +
     <div data-role="section" align="center">
          <a href="#" onclick="connect('es');" id="urles"><img src="es.png" /></a>
          &nbsp;&nbsp;&nbsp;
-        <a href="#"  onclick="connect('en');" id="urlen"><img src="en.png" /></a>
+        <a href="#"  onclick="onDeviceReady();" id="urlen"><img src="en.png" /></a>
     </div>
-	<div data-role="section" align="center">
-		<p id="informaciondeldispositivo">Cargando informaci&oacute;n...</p>
-		<br />
-		<p id="informacionadicional">Cargando informaci&oacute;n...</p>  
-	</div>
+	
+
   </div>
 
   <div data-theme="h" data-role="footer" data-position="fixed" align="center">
