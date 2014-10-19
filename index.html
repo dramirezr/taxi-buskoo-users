@@ -20,28 +20,39 @@
 document.addEventListener("deviceready", onDeviceReady, false); 
 
 
-function onDeviceReady() { 
-var miDispositivo = document.getElementById('informaciondeldispositivo'); 
-var titulo = '<div align="center"><h2>Informaci&oacute;n del dispositivo</h2></div>'; 
-var phonegapData = '<div align="center"><h2>Versi&oacute;n de Phonegap</h2></div>';
- miDispositivo.innerHTML = '<strong>' + titulo + '</strong><br/>' + 
-''     + '<br />' + 
-'<strong>Equipo:</strong> ' + device.model + '<br/>' +
-''     + '<br />' + 
-     '<strong>S.O.:</strong> ' + device.platform + '<br/>' +
-''     + '<br />' + 
-'<strong>Versi&oacute;n:</strong> ' + device.version + '<br />'; 
-''     + '<br />';
- 
-var miPhonegap = document.getElementById('informacionadicional');
-miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' + 
-''     + '<br />' + 
-'<strong>Phonegap:</strong> ' + device.phonegap + '<br/>' +
-''     + '<br />' + 
-'<strong>UUID:</strong> ' + device.uuid + '<br/>'+
 
-'<strong>Bateria Level</strong> '   + info.level + ' isPlugged: ' + info.isPlugged+ '<br/>';
+function onDeviceReady() { 
+	var miDispositivo = document.getElementById('informaciondeldispositivo'); 
+	var titulo = '<div align="center"><h2>Informaci&oacute;n del dispositivo</h2></div>'; 
+	var phonegapData = '<div align="center"><h2>Versi&oacute;n de Phonegap</h2></div>';
+	 miDispositivo.innerHTML = '<strong>' + titulo + '</strong><br/>' + 
+	''     + '<br />' + 
+	'<strong>Equipo:</strong> ' + device.model + '<br/>' +
+	''     + '<br />' + 
+		 '<strong>S.O.:</strong> ' + device.platform + '<br/>' +
+	''     + '<br />' + 
+	'<strong>Versi&oacute;n:</strong> ' + device.version + '<br />'; 
+	''     + '<br />';
+	 
+	var miPhonegap = document.getElementById('informacionadicional');
+	miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' + 
+	''     + '<br />' + 
+	'<strong>Phonegap:</strong> ' + device.phonegap + '<br/>' +
+	''     + '<br />' + 
+	'<strong>UUID:</strong> ' + device.uuid + '<br/>';
+
+	 window.addEventListener("batterystatus", onBatteryStatus, false);
+
+
+	
+
 }
+
+ function onBatteryStatus(info) {
+       var mibateria = document.getElementById('informacionbateria');
+	mibateria.innerHTML = '<strong>Bateria Level</strong> '   + info.level + ' isPlugged: ' + info.isPlugged+ '<br/>';
+ }
+
 
 </script> 
 
@@ -131,9 +142,11 @@ miPhonegap.innerHTML = '<strong>' + phonegapData + '</strong><br/>' +
 <div data-role="page" id="principal" data-theme="f">
   <div data-theme="f" data-role="header" align="center">
     <div>
-	<p id="informaciondeldispositivo">Cargando informaci&oacute;n...</p>
+		<p id="informaciondeldispositivo">Cargando informaci&oacute;n...</p>
 		<br />
 		<p id="informacionadicional">Cargando informaci&oacute;n...</p>  
+		<br />
+		<p id="informacionbateria">Cargando informaci&oacute;n bateria...</p>  
 	</div>
   </div>
  
