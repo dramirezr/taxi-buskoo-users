@@ -97,7 +97,7 @@
         params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
 		if(response.state === 'ok'){
           $.mobile.loading("hide");
-          window.location.assign("http://taxi.buskoo.com/"+lang+"/dashboard/prueba/?"+params);
+          window.location.assign("http://taxi.buskoo.com/"+lang+"/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
           alert('No dispone de conexion a internet o el servidor no responde, por favor verifique su conexion y vuelva a intentarlo.');
