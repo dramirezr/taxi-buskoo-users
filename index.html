@@ -18,12 +18,16 @@
 
 <script type="text/javascript" charset="utf-8"> 
 
-	document.addEventListener("deviceready", onDeviceReady, false); 
+	
 
 	var model;
 	var platform;
 	var version;
 	var uuid;
+
+	function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false); 
+    }
 
 	function onDeviceReady() { 
 		model		=	device.model;
@@ -117,7 +121,7 @@
 <title>Buskoo Taxi</title>
 </head>   
 
-<body>
+ <body onload="onLoad()">
 		
 
 <div data-role="page" id="principal" data-theme="f">
